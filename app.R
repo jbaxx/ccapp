@@ -1,12 +1,18 @@
 library(shiny)
 library(ccharter)
 ui <- fluidPage(
-  
+  titlePanel("Control Chart App"),
+  sidebarLayout(
+    sidebarPanel(
   fileInput(inputId = "file1", label = "Choose a CSV", accept=c('text/csv','text/comma-separated-values,text/plain','.csv')),
   actionButton(inputId = "go", label = "Analyze"),
-  tableOutput("contents"),
-  plotOutput("ploti")
+    width = 3),
+  mainPanel(
+    plotOutput("ploti"),
+    tableOutput("contents")
   
+  )
+  )
 )
 
 server <- function(input, output) {
