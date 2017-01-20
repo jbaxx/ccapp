@@ -1,2 +1,2 @@
 # ccapp
-## App.R holds the code that implements the App server :)
+App.R holds the code that implements the App server :)
